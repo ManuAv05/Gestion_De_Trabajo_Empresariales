@@ -27,11 +27,11 @@ El enfoque ha sido representar cómo diferentes actores pueden gestionar proyect
 
 Se planteó un sistema que permita a los usuarios gestionar múltiples proyectos, organizados por tareas, con responsables asignados y fechas de entrega. Las principales entidades identificadas son:
 
-- **Usuario**
+- **Trabajadores** (clase abstracta)
+  - **Empleado** (subclase)
 - **Proyecto**
-- **Tarea**
-- **Equipo**
-- **Rol**
+
+Estas entidades permiten organizar los recursos humanos y el seguimiento de los proyectos en desarrollo.
 
 ---
 
@@ -39,12 +39,59 @@ Se planteó un sistema que permita a los usuarios gestionar múltiples proyectos
 
 El diseño del sistema incluye:
 
-- ✔ Herencia (por ejemplo, `Usuario` como clase base de `Administrador` y `Colaborador`)
-- ✔ Asociación entre `Proyecto` y `Tarea` (1 a muchos)
-- ✔ Composición entre `Equipo` y `Usuario`
-- ✔ Visibilidad (`+`, `-`, `#`), tipos de datos y métodos definidos
+- ✔ **Herencia**: La clase abstracta `Trabajadores` es la superclase de `Empleado`.
+- ✔ **Encapsulamiento**: Uso de atributos `private` y métodos públicos.
+- ✔ **Asociación**: La clase `Proyecto` contiene una lista de personas implicadas en forma de array/lista.
+- ✔ **Uso de fechas**: Empleo de `Date` para la fecha de ingreso en trabajadores, y `String` para fechas de proyectos (simplificado).
+- ✔ **Anotaciones UML**: Anotaciones de Modelio (`@objid`) para representar metadatos de diseño.
 
-*El diagrama fue creado con MODELIO 5, lo que permitió la generación automática del código base.*
+---
+
+## 💾 Clases Implementadas
+
+### 🔹 `Trabajadores` (abstracta)
+Clase base que representa a cualquier trabajador del sistema.
+
+**Atributos**:
+- `String nombre`
+- `String apellido`
+- `String DNI`
+- `int edad`
+- `String direccion`
+- `Date fecha_Ingreso`
+- `int sueldo_base`
+
+**Método**:
+- `mostrarInformacion()` – método abstracto para mostrar los datos del trabajador.
+
+---
+
+### 🔹 `Empleado` (hereda de `Trabajadores`)
+Representa un empleado con un cargo específico.
+
+**Atributos adicionales**:
+- `String cargo`
+- `String puesto_trabajo`
+
+**Métodos**:
+- Constructor con parámetros.
+- Sobrescritura de `mostrarInformacion()`.
+
+---
+
+### 🔹 `Proyecto`
+Define un proyecto que puede contener varias personas asignadas.
+
+**Atributos**:
+- `String nombre`
+- `String descripcion`
+- `String[] lista_personas`
+- `String estado_proyecto`
+- `String fecha_inicio`
+- `String fecha_fin`
+
+**Constructor**:
+- Recibe todos los parámetros anteriores, incluyendo una lista de personas.
 
 ---
 
@@ -61,9 +108,9 @@ El diseño del sistema incluye:
 
 El código base ha sido generado en **JAVA**, estructurado en clases siguiendo el modelo UML. Se ha añadido parte de la lógica funcional manualmente para representar comportamientos clave del sistema, como:
 
-- Crear un proyecto con tareas asignadas.
-- Asignar usuarios a proyectos o equipos.
-- Marcar tareas como completadas.
+- Crear un empleado con cargo y puesto.
+- Mostrar información básica de trabajadores.
+- Crear un proyecto con personas asignadas y fechas definidas.
 
 ---
 
