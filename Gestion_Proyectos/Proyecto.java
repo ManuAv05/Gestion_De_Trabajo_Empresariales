@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,6 +15,8 @@ public final class Proyecto {
 
     private String fecha_fin;
 
+    private static List<Proyecto> listaProyectos = new ArrayList<>();
+
     public Proyecto(final String nombre, final String descripcion, final List<String> lista_personas, final String estado_proyecto, final String fecha_inicio, final String fecha_fin) {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -21,6 +24,40 @@ public final class Proyecto {
         this.estado_proyecto = estado_proyecto;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
+        listaProyectos.add(this);
+    }
+
+    public static void eliminarProyecto(String nombreEliminar) {
+        for (Proyecto proyecto : listaProyectos) {
+            if (proyecto.getNombre().equalsIgnoreCase(nombreEliminar)) {
+                listaProyectos.remove(proyecto);
+                System.out.println("Proyecto eliminado: " + nombreEliminar);
+                return;
+            }
+        }
+        System.out.println("Proyecto no encontrado: " + nombreEliminar);
+    }
+    public static void modificarProyecto(String nombreModificar, String nuevoNombre, String nuevaDescripcion, String nuevoEstado, String nuevaFechaInicio, String nuevaFechaFin) {
+        for (Proyecto proyecto : listaProyectos) {
+            if (proyecto.getNombre().equalsIgnoreCase(nombreModificar)) {
+                proyecto.setNombre(nuevoNombre);
+                proyecto.setDescripcion(nuevaDescripcion);
+                proyecto.setEstado_proyecto(nuevoEstado);
+                proyecto.setFecha_inicio(nuevaFechaInicio);
+                proyecto.setFecha_fin(nuevaFechaFin);
+                System.out.println("Proyecto modificado: " + nombreModificar);
+                return;
+            }
+        }
+        System.out.println("Proyecto no encontrado: " + nombreModificar);
+    }
+
+    public static List<Proyecto> getListaProyectos() {
+        return listaProyectos;
+    }
+
+    public static void setListaProyectos(List<Proyecto> listaProyectos) {
+        Proyecto.listaProyectos = listaProyectos;
     }
 
     public String getNombre() {
