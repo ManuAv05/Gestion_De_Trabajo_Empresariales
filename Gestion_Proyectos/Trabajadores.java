@@ -25,9 +25,72 @@ public abstract class Trabajadores {
         sueldo_base = sueldoBase;
     }
 
-    public void mostrarInformacion() {
-
+    public String getNombre() {
+        return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
+
+    public Date getFecha_Ingreso() {
+        return fecha_Ingreso;
+    }
+
+    public void setFecha_Ingreso(Date fecha_Ingreso) {
+        this.fecha_Ingreso = fecha_Ingreso;
+    }
+
+    public int getSueldo_base() {
+        return sueldo_base;
+    }
+
+    public void setSueldo_base(int sueldo_base) {
+        this.sueldo_base = sueldo_base;
+    }
+
+    @Override
+    public String toString() {
+        return "Trabajadores{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", DNI='" + DNI + '\'' +
+                ", edad=" + edad +
+                ", Direccion='" + Direccion + '\'' +
+                ", fecha_Ingreso=" + fecha_Ingreso +
+                ", sueldo_base=" + sueldo_base +
+                '}';
+    }
 }

@@ -11,17 +11,35 @@ public class Empleado extends Trabajadores {
         this.puesto_trabajo = puesto_trabajo;
     }
 
-    public void mostrarInformacion() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Apellido: " + apellido);
-        System.out.println("DNI: " + DNI);
-        System.out.println("Edad: " + edad);
-        System.out.println("Direccion: " + Direccion);
-        System.out.println("Fecha de Ingreso: " + fecha_Ingreso);
-        System.out.println("Sueldo Base: " + sueldo_base);
-        System.out.println("Cargo: " + cargo);
-        System.out.println("Puesto de Trabajo: " + puesto_trabajo);
-
+    public String getCargo() {
+        return cargo;
     }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public String getPuesto_trabajo() {
+        return puesto_trabajo;
+    }
+
+    public void setPuesto_trabajo(String puesto_trabajo) {
+        this.puesto_trabajo = puesto_trabajo;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Nombre: " + nombre + "\n" +
+                        "Apellido: " + apellido + "\n" +
+                        "DNI: " + DNI + "\n" +
+                        "Edad: " + edad + "\n" +
+                        "Direccion: " + Direccion + "\n" +
+                        "Fecha de Ingreso: " + fecha_Ingreso + "\n" +
+                        "Sueldo Base: " + sueldo_base + "\n" +
+                        "Cargo: " + cargo + "\n" +
+                        "Puesto de Trabajo: " + puesto_trabajo;
+    }
+
 
 }
