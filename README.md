@@ -44,13 +44,13 @@ El diseño del sistema incluye:
 - ✔ Composición entre `Equipo` y `Usuario`
 - ✔ Visibilidad (`+`, `-`, `#`), tipos de datos y métodos definidos
 
-*El diagrama fue creado con [Nombre de la herramienta UML, ej. StarUML], lo que permitió la generación automática del código base.*
+*El diagrama fue creado con MODELIO 5, lo que permitió la generación automática del código base.*
 
 ---
 
 ## 🧰 Herramienta UML Utilizada
 
-> **[Nombre de la herramienta UML]**
+> **MODELIO 5**
 > - Permite diseñar diagramas de clases completos.
 > - Ofrece generación automática del esqueleto de código.
 > - Exporta en formatos estándar para integración en proyectos reales.
@@ -59,7 +59,7 @@ El diseño del sistema incluye:
 
 ## 💻 Lenguaje de Programación
 
-El código base ha sido generado en **[Lenguaje elegido, ej. Java o Python]**, estructurado en clases siguiendo el modelo UML. Se ha añadido parte de la lógica funcional manualmente para representar comportamientos clave del sistema, como:
+El código base ha sido generado en **JAVA**, estructurado en clases siguiendo el modelo UML. Se ha añadido parte de la lógica funcional manualmente para representar comportamientos clave del sistema, como:
 
 - Crear un proyecto con tareas asignadas.
 - Asignar usuarios a proyectos o equipos.
