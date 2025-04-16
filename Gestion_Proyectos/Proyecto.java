@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public final class Proyecto {
+public class Proyecto {
     private String nombre;
 
     private String descripcion;
@@ -17,10 +17,20 @@ public final class Proyecto {
 
     private static List<Proyecto> listaProyectos = new ArrayList<>();
 
-    public Proyecto(final String nombre, final String descripcion, final List<String> lista_personas, final String estado_proyecto, final String fecha_inicio, final String fecha_fin) {
+    public Proyecto(String nombre, String descripcion, List<String> lista_personas, String estado_proyecto, String fecha_inicio, String fecha_fin) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.lista_personas = lista_personas.toArray(new String[0]);
+        this.estado_proyecto = estado_proyecto;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
+        listaProyectos.add(this);
+    }
+    //Constructor sin lista de personas
+    public Proyecto(String nombre, String descripcion, String estado_proyecto, String fecha_inicio, String fecha_fin) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.lista_personas = null;
         this.estado_proyecto = estado_proyecto;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
