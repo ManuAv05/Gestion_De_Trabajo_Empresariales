@@ -18,6 +18,7 @@ public class Empleado extends Trabajadores {
         int contador = sc.nextInt();
         while (contador > 0) {
             contador--;
+            //MEGATROLL
             System.out.println("Ingrese el nombre del trabajador:");
             String nombre = sc.next();
             System.out.println("Ingrese el apellido del trabajador:");

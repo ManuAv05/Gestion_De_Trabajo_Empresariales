@@ -51,7 +51,7 @@ public class Trabajadores {
         this.DNI = DNI;
     }
 
-    public int getEdad() {
+    public int/*MEGATROLL*/ getEdad() {
         return edad;
     }
 

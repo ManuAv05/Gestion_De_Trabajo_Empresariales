@@ -14,6 +14,7 @@ public class Main {
         // MENU:
         int opcion;
         boolean siSigue = true;
+        //MEGATROLL
         while (siSigue) {
             System.out.println("Bienvenido al Gestor de Proyectos");
             System.out.println("1. Crear Proyecto");
