@@ -35,6 +35,7 @@ public class Proyecto {
         this.fecha_fin = fecha_fin;
         listaProyectos.add(this);
     }
+
     public static Proyecto crearProyecto() {
         System.out.println("Ingrese el nombre del proyecto:");
         String nombre = sc.nextLine();
@@ -49,6 +50,7 @@ public class Proyecto {
         LocalDate fecha_fin = LocalDate.parse(sc.nextLine());
         return new Proyecto(nombre, descripcion, lista_personas, estado_proyecto, fecha_inicio, fecha_fin);
     }
+
     public static void eliminarProyecto(String nombreEliminar) {
         for (Proyecto proyecto : listaProyectos) {
             if (proyecto.getNombre().equalsIgnoreCase(nombreEliminar)) {
