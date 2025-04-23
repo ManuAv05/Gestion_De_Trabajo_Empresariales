@@ -1,11 +1,11 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Empleado extends Trabajadores {
     private String cargo;
 
     private String puesto_trabajo;
 
-    public Empleado(final String cargo, final String puesto_trabajo, String nombre, String apellido, String dni, int edad, String direccion, Date fechaIngreso, int sueldoBase) {
+    public Empleado(final String cargo, final String puesto_trabajo, String nombre, String apellido, String dni, int edad, String direccion, LocalDate fechaIngreso, int sueldoBase) {
         super(nombre, apellido, dni, edad, direccion, fechaIngreso, sueldoBase);
         this.cargo = cargo;
         this.puesto_trabajo = puesto_trabajo;

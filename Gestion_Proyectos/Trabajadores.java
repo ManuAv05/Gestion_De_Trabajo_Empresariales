@@ -1,6 +1,10 @@
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public abstract class Trabajadores {
+public class Trabajadores {
+    static Scanner sc = new Scanner(System.in);
     protected String nombre;
 
     protected String apellido;
@@ -11,11 +15,11 @@ public abstract class Trabajadores {
 
     protected String Direccion;
 
-    protected Date fecha_Ingreso;
+    protected LocalDate fecha_Ingreso;
 
     protected int sueldo_base;
 
-    public Trabajadores(String nombre, String apellido, String dni, int edad, String direccion, Date fechaIngreso, int sueldoBase) {
+    public Trabajadores(String nombre, String apellido, String dni, int edad, String direccion, LocalDate fechaIngreso, int sueldoBase) {
         this.nombre = nombre;
         this.apellido = apellido;
         DNI = dni;
@@ -23,6 +27,31 @@ public abstract class Trabajadores {
         Direccion = direccion;
         fecha_Ingreso = fechaIngreso;
         sueldo_base = sueldoBase;
+    }
+
+    public static List<Trabajadores> listasTrabajadores() {
+        List<Trabajadores> trabajadores = new ArrayList<>();
+        System.out.println("Cuantos trabajadores desea ingresar?");
+        int contador = sc.nextInt();
+        while (contador > 0) {
+            contador--;
+            System.out.println("Ingrese el nombre del trabajador:");
+            String nombre = sc.next();
+            System.out.println("Ingrese el apellido del trabajador:");
+            String apellido = sc.next();
+            System.out.println("Ingrese el DNI del trabajador:");
+            String dni = sc.next();
+            System.out.println("Ingrese la edad del trabajador:");
+            int edad = sc.nextInt();
+            System.out.println("Ingrese la direccion del trabajador:");
+            String direccion = sc.next();
+            System.out.println("Ingrese la fecha de ingreso del trabajador (YYYY-MM-DD):");
+            LocalDate fechaIngresoStr = LocalDate.parse(sc.next());
+            System.out.println("Ingrese el sueldo base del trabajador:");
+            int sueldoBase = sc.nextInt();
+            trabajadores.add(new Trabajadores(nombre, apellido, dni, edad, direccion, fechaIngresoStr, sueldoBase));
+        }
+        return trabajadores;
     }
 
     public String getNombre() {
@@ -65,11 +94,11 @@ public abstract class Trabajadores {
         Direccion = direccion;
     }
 
-    public Date getFecha_Ingreso() {
+    public LocalDate getFecha_Ingreso() {
         return fecha_Ingreso;
     }
 
-    public void setFecha_Ingreso(Date fecha_Ingreso) {
+    public void setFecha_Ingreso(LocalDate fecha_Ingreso) {
         this.fecha_Ingreso = fecha_Ingreso;
     }
 

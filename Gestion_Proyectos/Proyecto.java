@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Proyecto {
@@ -7,7 +6,7 @@ public class Proyecto {
 
     private String descripcion;
 
-    private String[] lista_personas;
+    private List<Trabajadores> lista_personas;
 
     private String estado_proyecto;
 
@@ -17,15 +16,16 @@ public class Proyecto {
 
     private static List<Proyecto> listaProyectos = new ArrayList<>();
 
-    public Proyecto(String nombre, String descripcion, List<String> lista_personas, String estado_proyecto, String fecha_inicio, String fecha_fin) {
+    public Proyecto(String nombre, String descripcion, List<Trabajadores> lista_personas, String estado_proyecto, String fecha_inicio, String fecha_fin) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.lista_personas = lista_personas.toArray(new String[0]);
+        this.lista_personas = lista_personas;
         this.estado_proyecto = estado_proyecto;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
         listaProyectos.add(this);
     }
+
     //Constructor sin lista de personas
     public Proyecto(String nombre, String descripcion, String estado_proyecto, String fecha_inicio, String fecha_fin) {
         this.nombre = nombre;
@@ -47,11 +47,13 @@ public class Proyecto {
         }
         System.out.println("Proyecto no encontrado: " + nombreEliminar);
     }
+
     public static void modificarProyecto(String nombreModificar, String nuevoNombre, String nuevaDescripcion, String nuevoEstado, String nuevaFechaInicio, String nuevaFechaFin) {
         for (Proyecto proyecto : listaProyectos) {
             if (proyecto.getNombre().equalsIgnoreCase(nombreModificar)) {
                 proyecto.setNombre(nuevoNombre);
                 proyecto.setDescripcion(nuevaDescripcion);
+                proyecto.setLista_personas(Trabajadores.listasTrabajadores());
                 proyecto.setEstado_proyecto(nuevoEstado);
                 proyecto.setFecha_inicio(nuevaFechaInicio);
                 proyecto.setFecha_fin(nuevaFechaFin);
@@ -86,11 +88,11 @@ public class Proyecto {
         this.descripcion = descripcion;
     }
 
-    public String[] getLista_personas() {
+    public List<Trabajadores> getLista_personas() {
         return lista_personas;
     }
 
-    public void setLista_personas(String[] lista_personas) {
+    public void setLista_personas(List<Trabajadores> lista_personas) {
         this.lista_personas = lista_personas;
     }
 
@@ -123,7 +125,7 @@ public class Proyecto {
         return "Proyecto{" +
                 "nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", lista_personas=" + Arrays.toString(lista_personas) +
+                ", lista_personas=" + lista_personas +
                 ", estado_proyecto='" + estado_proyecto + '\'' +
                 ", fecha_inicio='" + fecha_inicio + '\'' +
                 ", fecha_fin='" + fecha_fin + '\'' +

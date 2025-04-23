@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -27,15 +28,15 @@ public class Main {
                     String nombre = sc.nextLine();
                     System.out.println("Descripcion del Proyecto:");
                     String descripcion = sc.nextLine();
+                    System.out.println("Lista de Personas");
+                    List<Trabajadores> listaPersonas = Trabajadores.listasTrabajadores();
                     System.out.println("Estado del Proyecto:");
                     String estado = sc.nextLine();
                     System.out.println("Fecha de Inicio (YYYY-MM-DD):");
                     String fechaInicio = sc.nextLine();
                     System.out.println("Fecha de Fin (YYYY-MM-DD):");
                     String fechaFin = sc.nextLine();
-                    //Para la lista de Personas necesitamos un array o una lista que debemos crear antes, o incluir en alguna
-                    //de las clases un atributo que sea una lista y llamarlo desde ahí
-                    new Proyecto(nombre, descripcion, estado, fechaInicio, fechaFin);
+                    new Proyecto(nombre, descripcion, listaPersonas, estado, fechaInicio, fechaFin);
                     break;
                 case 2:
                     System.out.println("Escriba el nombre del proyecto a eliminar:");
