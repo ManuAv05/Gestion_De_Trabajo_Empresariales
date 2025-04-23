@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +8,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Proyecto {
+    static Scanner sc = new Scanner(System.in);
     private String nombre;
 
     private String descripcion;
@@ -17,13 +20,13 @@ public class Proyecto {
 
     private String estado_proyecto;
 
-    private String fecha_inicio;
+    private LocalDate fecha_inicio;
 
-    private String fecha_fin;
+    private LocalDate fecha_fin;
 
     private static List<Proyecto> listaProyectos = new ArrayList<>();
 
-    public Proyecto(String nombre, String descripcion, List<Empleado> lista_personas, String estado_proyecto, String fecha_inicio, String fecha_fin) {
+    public Proyecto(String nombre, String descripcion, List<Empleado> lista_personas, String estado_proyecto, LocalDate fecha_inicio, LocalDate fecha_fin) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.lista_personas = lista_personas;
@@ -44,20 +47,31 @@ public class Proyecto {
         System.out.println("Proyecto no encontrado: " + nombreEliminar);
     }
 
-    public static void modificarProyecto(String nombreModificar, String nuevoNombre, String nuevaDescripcion, String nuevoEstado, String nuevaFechaInicio, String nuevaFechaFin) {
+    public static void modificarProyecto(String nombreModificar) {
         for (Proyecto proyecto : listaProyectos) {
             if (proyecto.getNombre().equalsIgnoreCase(nombreModificar)) {
+                System.out.println("Ingrese el nuevo nombre del proyecto:");
+                String nuevoNombre = sc.nextLine();
                 proyecto.setNombre(nuevoNombre);
+                System.out.println("Ingrese la nueva descripcion del proyecto:");
+                String nuevaDescripcion = sc.nextLine();
                 proyecto.setDescripcion(nuevaDescripcion);
                 proyecto.setLista_personas(Empleado.listasTrabajadores());
+                System.out.println("Ingrese el nuevo estado del proyecto:");
+                String nuevoEstado = sc.nextLine();
                 proyecto.setEstado_proyecto(nuevoEstado);
+                System.out.println("Ingrese la nueva fecha de inicio (YYYY-MM-DD):");
+                LocalDate nuevaFechaInicio = LocalDate.parse(sc.nextLine());
                 proyecto.setFecha_inicio(nuevaFechaInicio);
+                System.out.println("Ingrese la nueva fecha de fin (YYYY-MM-DD):");
+                LocalDate nuevaFechaFin = LocalDate.parse(sc.nextLine());
                 proyecto.setFecha_fin(nuevaFechaFin);
                 System.out.println("Proyecto modificado: " + nombreModificar);
                 return;
             }
         }
-        System.out.println("Proyecto no encontrado: " + nombreModificar);
+        System.out.println("PROYECTO NO ENCONTRADO: " + nombreModificar);
+        System.out.println();
     }
 
     public static void exportarProyectoAJSON(String nombreProyecto) throws IOException {
@@ -116,19 +130,19 @@ public class Proyecto {
         this.estado_proyecto = estado_proyecto;
     }
 
-    public String getFecha_inicio() {
+    public LocalDate getFecha_inicio() {
         return fecha_inicio;
     }
 
-    public void setFecha_inicio(String fecha_inicio) {
+    public void setFecha_inicio(LocalDate fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 
-    public String getFecha_fin() {
+    public LocalDate getFecha_fin() {
         return fecha_fin;
     }
 
-    public void setFecha_fin(String fecha_fin) {
+    public void setFecha_fin(LocalDate fecha_fin) {
         this.fecha_fin = fecha_fin;
     }
 
