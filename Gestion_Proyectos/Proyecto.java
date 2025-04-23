@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -12,7 +13,7 @@ public class Proyecto {
 
     private String descripcion;
 
-    private List<Trabajadores> lista_personas;
+    private List<Empleado> lista_personas;
 
     private String estado_proyecto;
 
@@ -22,7 +23,7 @@ public class Proyecto {
 
     private static List<Proyecto> listaProyectos = new ArrayList<>();
 
-    public Proyecto(String nombre, String descripcion, List<Trabajadores> lista_personas, String estado_proyecto, String fecha_inicio, String fecha_fin) {
+    public Proyecto(String nombre, String descripcion, List<Empleado> lista_personas, String estado_proyecto, String fecha_inicio, String fecha_fin) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.lista_personas = lista_personas;
@@ -48,7 +49,7 @@ public class Proyecto {
             if (proyecto.getNombre().equalsIgnoreCase(nombreModificar)) {
                 proyecto.setNombre(nuevoNombre);
                 proyecto.setDescripcion(nuevaDescripcion);
-                proyecto.setLista_personas(Trabajadores.listasTrabajadores());
+                proyecto.setLista_personas(Empleado.listasTrabajadores());
                 proyecto.setEstado_proyecto(nuevoEstado);
                 proyecto.setFecha_inicio(nuevaFechaInicio);
                 proyecto.setFecha_fin(nuevaFechaFin);
@@ -58,6 +59,7 @@ public class Proyecto {
         }
         System.out.println("Proyecto no encontrado: " + nombreModificar);
     }
+
     public static void exportarProyectoAJSON(String nombreProyecto) throws IOException {
         for (Proyecto proyecto : listaProyectos) {
             if (proyecto.getNombre().equalsIgnoreCase(nombreProyecto)) {
@@ -98,11 +100,11 @@ public class Proyecto {
         this.descripcion = descripcion;
     }
 
-    public List<Trabajadores> getLista_personas() {
+    public List<Empleado> getLista_personas() {
         return lista_personas;
     }
 
-    public void setLista_personas(List<Trabajadores> lista_personas) {
+    public void setLista_personas(List<Empleado> lista_personas) {
         this.lista_personas = lista_personas;
     }
 
@@ -133,12 +135,12 @@ public class Proyecto {
     @Override
     public String toString() {
         return "Proyecto{" +
-                "Nombre='" + nombre + '\'' +
-                ", Descripcion='" + descripcion + '\'' +
-                ", Lista personas=" + lista_personas +
-                ", Estado proyecto='" + estado_proyecto + '\'' +
-                ", Fecha inicio='" + fecha_inicio + '\'' +
-                ", Fecha fin='" + fecha_fin + '\'' +
+                "nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", lista_personas=" + lista_personas +
+                ", estado_proyecto='" + estado_proyecto + '\'' +
+                ", fecha_inicio='" + fecha_inicio + '\'' +
+                ", fecha_fin='" + fecha_fin + '\'' +
                 '}';
     }
 }

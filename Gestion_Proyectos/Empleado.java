@@ -1,16 +1,45 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Empleado extends Trabajadores {
     private String cargo;
 
     private String puesto_trabajo;
 
-    public Empleado(final String cargo, final String puesto_trabajo, String nombre, String apellido, String dni, int edad, String direccion, LocalDate fechaIngreso, int sueldoBase) {
+    public Empleado(String cargo, String puesto_trabajo, String nombre, String apellido, String dni, int edad, String direccion, LocalDate fechaIngreso, int sueldoBase) {
         super(nombre, apellido, dni, edad, direccion, fechaIngreso, sueldoBase);
         this.cargo = cargo;
         this.puesto_trabajo = puesto_trabajo;
     }
-
+    public static List<Empleado> listasTrabajadores() {
+        List<Empleado> empleados = new ArrayList<>();
+        System.out.println("Cuantos trabajadores desea ingresar?");
+        int contador = sc.nextInt();
+        while (contador > 0) {
+            contador--;
+            System.out.println("Ingrese el nombre del trabajador:");
+            String nombre = sc.next();
+            System.out.println("Ingrese el apellido del trabajador:");
+            String apellido = sc.next();
+            System.out.println("Ingrese el DNI del trabajador:");
+            String dni = sc.next();
+            System.out.println("Ingrese la edad del trabajador:");
+            int edad = sc.nextInt();
+            System.out.println("Ingrese la direccion del trabajador:");
+            String direccion = sc.next();
+            System.out.println("Ingrese la fecha de ingreso del trabajador (YYYY-MM-DD):");
+            LocalDate fechaIngresoStr = LocalDate.parse(sc.next());
+            System.out.println("Ingrese el sueldo base del trabajador:");
+            int sueldoBase = sc.nextInt();
+            System.out.println("Ingrese el cargo del trabajador:");
+            String cargo = sc.next();
+            System.out.println("Ingrese el puesto de trabajo del trabajador:");
+            String puesto_trabajo = sc.next();
+            empleados.add(new Empleado(cargo, puesto_trabajo, nombre, apellido, dni, edad, direccion, fechaIngresoStr, sueldoBase));
+        }
+        return empleados;
+    }
     public String getCargo() {
         return cargo;
     }
@@ -29,17 +58,16 @@ public class Empleado extends Trabajadores {
 
     @Override
     public String toString() {
-        return
-                "Nombre: " + nombre + "\n" +
-                        "Apellido: " + apellido + "\n" +
-                        "DNI: " + DNI + "\n" +
-                        "Edad: " + edad + "\n" +
-                        "Direccion: " + Direccion + "\n" +
-                        "Fecha de Ingreso: " + fecha_Ingreso + "\n" +
-                        "Sueldo Base: " + sueldo_base + "\n" +
-                        "Cargo: " + cargo + "\n" +
-                        "Puesto de Trabajo: " + puesto_trabajo;
+        return "Empleado{" +
+                "cargo='" + cargo + '\'' +
+                ", puesto_trabajo='" + puesto_trabajo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", DNI='" + DNI + '\'' +
+                ", edad=" + edad +
+                ", Direccion='" + Direccion + '\'' +
+                ", fecha_Ingreso=" + fecha_Ingreso +
+                ", sueldo_base=" + sueldo_base +
+                '}';
     }
-
-
 }

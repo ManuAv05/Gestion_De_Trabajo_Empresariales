@@ -7,10 +7,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         menu();
-        // Crear un objeto de la clase Empleado
     }
 
     public static void menu() throws IOException {
+        // MENU:
         int opcion;
         boolean siSigue = true;
         while (siSigue) {
@@ -23,14 +23,18 @@ public class Main {
             System.out.println("6. Salir");
             opcion = sc.nextInt();
             sc.nextLine();
+
+            // SUBMENU:
             switch (opcion) {
+
+                //1. CREAR PROYECTO:
                 case 1:
                     System.out.println("Nombre del Proyecto:");
                     String nombre = sc.nextLine();
                     System.out.println("Descripcion del Proyecto:");
                     String descripcion = sc.nextLine();
                     System.out.println("Lista de Personas");
-                    List<Trabajadores> listaPersonas = Trabajadores.listasTrabajadores();
+                    List<Empleado> listaPersonas = Empleado.listasTrabajadores();
                     System.out.println("Estado del Proyecto:");
                     String estado = sc.nextLine();
                     System.out.println("Fecha de Inicio (YYYY-MM-DD):");
@@ -39,11 +43,15 @@ public class Main {
                     String fechaFin = sc.nextLine();
                     new Proyecto(nombre, descripcion, listaPersonas, estado, fechaInicio, fechaFin);
                     break;
+
+                //2. ELIMINAR PROYECTO:
                 case 2:
                     System.out.println("Escriba el nombre del proyecto a eliminar:");
                     String nombreEliminar = sc.nextLine();
                     Proyecto.eliminarProyecto(nombreEliminar);
                     break;
+
+                //3. MODIFICAR PROYECTO:
                 case 3:
                     System.out.println("Escriba el nombre del proyecto a modificar:");
                     String nombreModificar = sc.nextLine();
@@ -60,22 +68,26 @@ public class Main {
                     String nuevaFechaFin = sc.nextLine();
                     Proyecto.modificarProyecto(nombreModificar, nuevoNombre, nuevaDescripcion, nuevoEstado, nuevaFechaInicio, nuevaFechaFin);
                     break;
+
+                //4. LISTAR PROYECTO:
                 case 4:
                     System.out.println("Lista de Proyectos:");
                     System.out.println(Proyecto.getListaProyectos());
                     break;
+
+                //5. EXPORTAR PROYECTO A JSON:
                 case 5:
                     System.out.println("Escriba el nombre del proyecto a exportar:");
                     String nombreExportar = sc.nextLine();
                     Proyecto.exportarProyectoAJSON(nombreExportar);
                     break;
+
+                //6. SALIR DEL PROGRAMA:
                 case 6:
                     System.out.println("Saliendo...");
                     siSigue = false;
                     break;
             }
         }
-
-
     }
 }
