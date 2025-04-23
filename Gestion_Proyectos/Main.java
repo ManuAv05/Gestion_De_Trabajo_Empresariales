@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -38,9 +39,9 @@ public class Main {
                     System.out.println("Estado del Proyecto:");
                     String estado = sc.nextLine();
                     System.out.println("Fecha de Inicio (YYYY-MM-DD):");
-                    String fechaInicio = sc.nextLine();
+                    LocalDate fechaInicio = LocalDate.parse(sc.nextLine());
                     System.out.println("Fecha de Fin (YYYY-MM-DD):");
-                    String fechaFin = sc.nextLine();
+                    LocalDate fechaFin = LocalDate.parse(sc.nextLine());
                     new Proyecto(nombre, descripcion, listaPersonas, estado, fechaInicio, fechaFin);
                     break;
 
@@ -63,9 +64,9 @@ public class Main {
                     System.out.println("Escriba el nuevo estado del proyecto:");
                     String nuevoEstado = sc.nextLine();
                     System.out.println("Escriba la nueva fecha de inicio (YYYY-MM-DD):");
-                    String nuevaFechaInicio = sc.nextLine();
+                    LocalDate nuevaFechaInicio = LocalDate.parse(sc.nextLine());
                     System.out.println("Escriba la nueva fecha de fin (YYYY-MM-DD):");
-                    String nuevaFechaFin = sc.nextLine();
+                    LocalDate nuevaFechaFin = LocalDate.parse(sc.nextLine());
                     Proyecto.modificarProyecto(nombreModificar, nuevoNombre, nuevaDescripcion, nuevoEstado, nuevaFechaInicio, nuevaFechaFin);
                     break;
 

@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,13 +18,13 @@ public class Proyecto {
 
     private String estado_proyecto;
 
-    private String fecha_inicio;
+    private LocalDate fecha_inicio;
 
-    private String fecha_fin;
+    private LocalDate fecha_fin;
 
     private static List<Proyecto> listaProyectos = new ArrayList<>();
 
-    public Proyecto(String nombre, String descripcion, List<Empleado> lista_personas, String estado_proyecto, String fecha_inicio, String fecha_fin) {
+    public Proyecto(String nombre, String descripcion, List<Empleado> lista_personas, String estado_proyecto, LocalDate fecha_inicio, LocalDate fecha_fin) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.lista_personas = lista_personas;
@@ -44,7 +45,7 @@ public class Proyecto {
         System.out.println("Proyecto no encontrado: " + nombreEliminar);
     }
 
-    public static void modificarProyecto(String nombreModificar, String nuevoNombre, String nuevaDescripcion, String nuevoEstado, String nuevaFechaInicio, String nuevaFechaFin) {
+    public static void modificarProyecto(String nombreModificar, String nuevoNombre, String nuevaDescripcion, String nuevoEstado, LocalDate nuevaFechaInicio, LocalDate nuevaFechaFin) {
         for (Proyecto proyecto : listaProyectos) {
             if (proyecto.getNombre().equalsIgnoreCase(nombreModificar)) {
                 proyecto.setNombre(nuevoNombre);
@@ -116,19 +117,19 @@ public class Proyecto {
         this.estado_proyecto = estado_proyecto;
     }
 
-    public String getFecha_inicio() {
+    public LocalDate getFecha_inicio() {
         return fecha_inicio;
     }
 
-    public void setFecha_inicio(String fecha_inicio) {
+    public void setFecha_inicio(LocalDate fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 
-    public String getFecha_fin() {
+    public LocalDate getFecha_fin() {
         return fecha_fin;
     }
 
-    public void setFecha_fin(String fecha_fin) {
+    public void setFecha_fin(LocalDate fecha_fin) {
         this.fecha_fin = fecha_fin;
     }
 
