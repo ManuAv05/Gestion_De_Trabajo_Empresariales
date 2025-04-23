@@ -2,7 +2,6 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Trabajadores {
-    static Scanner sc = new Scanner(System.in);
     protected String nombre;
 
     protected String apellido;
@@ -51,7 +50,7 @@ public class Trabajadores {
         this.DNI = DNI;
     }
 
-    public int getEdad() {
+    public int/*MEGATROLL*/ getEdad() {
         return edad;
     }
 

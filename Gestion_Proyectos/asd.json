@@ -1,18 +1,18 @@
 [ {
   "nombre" : "asd",
-  "descripcion" : "asd",
+  "descripcion" : "sdf",
   "lista_personas" : [ {
-    "nombre" : "asdfds",
-    "apellido" : "sdfsd",
-    "edad" : 22,
+    "nombre" : "sdf",
+    "apellido" : "sdf",
+    "edad" : 11,
     "fecha_Ingreso" : [ 1111, 11, 11 ],
-    "sueldo_base" : 1312,
-    "cargo" : "sdfs",
-    "puesto_trabajo" : "sadfs",
-    "dni" : "sdf",
-    "direccion" : "sdf"
+    "sueldo_base" : 12312,
+    "cargo" : "sd",
+    "puesto_trabajo" : "ds",
+    "direccion" : "sfsd",
+    "dni" : "sdf"
   } ],
   "estado_proyecto" : "sdf",
   "fecha_inicio" : [ 1111, 11, 11 ],
-  "fecha_fin" : [ 2222, 11, 11 ]
+  "fecha_fin" : [ 1111, 11, 11 ]
 } ]

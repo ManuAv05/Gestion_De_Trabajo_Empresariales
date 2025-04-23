@@ -5,6 +5,10 @@
       <root url="jar://$USER_HOME$/Downloads/jackson-core-2.18.2.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/jackson-databind-2.18.2.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/jackson-datatype-jsr310-2.18.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gestion_Proyectos/imported_libraries/jackson-core-2.18.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gestion_Proyectos/imported_libraries/jackson-databind-2.18.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gestion_Proyectos/imported_libraries/jackson-datatype-jsr310-2.18.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gestion_Proyectos/imported_libraries/jackson-annotations-2.18.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

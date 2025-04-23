@@ -1,8 +1,10 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Empleado extends Trabajadores {
+    static Scanner sc = new Scanner(System.in);
     private String cargo;
 
     private String puesto_trabajo;
@@ -16,8 +18,10 @@ public class Empleado extends Trabajadores {
         List<Empleado> empleados = new ArrayList<>();
         System.out.println("Cuantos trabajadores desea ingresar?");
         int contador = sc.nextInt();
+        sc.nextLine();
         while (contador > 0) {
             contador--;
+            //MEGATROLL
             System.out.println("Ingrese el nombre del trabajador:");
             String nombre = sc.next();
             System.out.println("Ingrese el apellido del trabajador:");
