@@ -30,19 +30,7 @@ public class Main {
 
                 //1. CREAR PROYECTO:
                 case 1:
-                    System.out.println("Nombre del Proyecto:");
-                    String nombre = sc.nextLine();
-                    System.out.println("Descripcion del Proyecto:");
-                    String descripcion = sc.nextLine();
-                    System.out.println("Lista de Personas");
-                    List<Empleado> listaPersonas = Empleado.listasTrabajadores();
-                    System.out.println("Estado del Proyecto:");
-                    String estado = sc.nextLine();
-                    System.out.println("Fecha de Inicio (YYYY-MM-DD):");
-                    LocalDate fechaInicio = LocalDate.parse(sc.nextLine());
-                    System.out.println("Fecha de Fin (YYYY-MM-DD):");
-                    LocalDate fechaFin = LocalDate.parse(sc.nextLine());
-                    new Proyecto(nombre, descripcion, listaPersonas, estado, fechaInicio, fechaFin);
+                    Proyecto.crearProyecto();
                     break;
 
                 //2. ELIMINAR PROYECTO:

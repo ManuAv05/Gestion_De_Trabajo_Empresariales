@@ -35,7 +35,20 @@ public class Proyecto {
         this.fecha_fin = fecha_fin;
         listaProyectos.add(this);
     }
-
+    public static Proyecto crearProyecto() {
+        System.out.println("Ingrese el nombre del proyecto:");
+        String nombre = sc.nextLine();
+        System.out.println("Ingrese la descripcion del proyecto:");
+        String descripcion = sc.nextLine();
+        List<Empleado> lista_personas = Empleado.listasTrabajadores();
+        System.out.println("Ingrese el estado del proyecto:");
+        String estado_proyecto = sc.nextLine();
+        System.out.println("Ingrese la fecha de inicio (YYYY-MM-DD):");
+        LocalDate fecha_inicio = LocalDate.parse(sc.nextLine());
+        System.out.println("Ingrese la fecha de fin (YYYY-MM-DD):");
+        LocalDate fecha_fin = LocalDate.parse(sc.nextLine());
+        return new Proyecto(nombre, descripcion, lista_personas, estado_proyecto, fecha_inicio, fecha_fin);
+    }
     public static void eliminarProyecto(String nombreEliminar) {
         for (Proyecto proyecto : listaProyectos) {
             if (proyecto.getNombre().equalsIgnoreCase(nombreEliminar)) {
