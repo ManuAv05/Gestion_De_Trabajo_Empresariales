@@ -1,0 +1,16 @@
+[ {
+  "nombre" : "asd",
+  "descripcion" : "asdas",
+  "lista_personas" : [ {
+    "nombre" : "asdfasd",
+    "apellido" : "sdfsd",
+    "edad" : 11,
+    "fecha_Ingreso" : [ 1111, 11, 11 ],
+    "sueldo_base" : 1234123,
+    "dni" : "sdfsdf",
+    "direccion" : "sdfsdg"
+  } ],
+  "estado_proyecto" : "sdfsd",
+  "fecha_inicio" : "1111-11-11",
+  "fecha_fin" : "2222-11-11"
+} ]

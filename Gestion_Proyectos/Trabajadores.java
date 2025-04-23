@@ -113,13 +113,13 @@ public class Trabajadores {
     @Override
     public String toString() {
         return "Trabajadores{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
+                "Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
                 ", DNI='" + DNI + '\'' +
-                ", edad=" + edad +
+                ", Edad=" + edad +
                 ", Direccion='" + Direccion + '\'' +
-                ", fecha_Ingreso=" + fecha_Ingreso +
-                ", sueldo_base=" + sueldo_base +
+                ", Fecha Ingreso=" + fecha_Ingreso +
+                ", Sueldo base=" + sueldo_base +
                 '}';
     }
 }

@@ -1,16 +1,16 @@
-import java.util.Date;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         menu();
         // Crear un objeto de la clase Empleado
     }
 
-    public static void menu() {
+    public static void menu() throws IOException {
         int opcion;
         boolean siSigue = true;
         while (siSigue) {
@@ -19,7 +19,8 @@ public class Main {
             System.out.println("2. Eliminar Proyecto");
             System.out.println("3. Modificar Proyecto");
             System.out.println("4. Listar Proyectos");
-            System.out.println("5. Salir");
+            System.out.println("5. Exportar Proyecto a JSON");
+            System.out.println("6. Salir");
             opcion = sc.nextInt();
             sc.nextLine();
             switch (opcion) {
@@ -64,6 +65,11 @@ public class Main {
                     System.out.println(Proyecto.getListaProyectos());
                     break;
                 case 5:
+                    System.out.println("Escriba el nombre del proyecto a exportar:");
+                    String nombreExportar = sc.nextLine();
+                    Proyecto.exportarProyectoAJSON(nombreExportar);
+                    break;
+                case 6:
                     System.out.println("Saliendo...");
                     siSigue = false;
                     break;

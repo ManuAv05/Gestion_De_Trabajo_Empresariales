@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Proyecto {
     private String nombre;
@@ -20,17 +26,6 @@ public class Proyecto {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.lista_personas = lista_personas;
-        this.estado_proyecto = estado_proyecto;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_fin = fecha_fin;
-        listaProyectos.add(this);
-    }
-
-    //Constructor sin lista de personas
-    public Proyecto(String nombre, String descripcion, String estado_proyecto, String fecha_inicio, String fecha_fin) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.lista_personas = null;
         this.estado_proyecto = estado_proyecto;
         this.fecha_inicio = fecha_inicio;
         this.fecha_fin = fecha_fin;
@@ -62,6 +57,21 @@ public class Proyecto {
             }
         }
         System.out.println("Proyecto no encontrado: " + nombreModificar);
+    }
+    public static void exportarProyectoAJSON(String nombreProyecto) throws IOException {
+        for (Proyecto proyecto : listaProyectos) {
+            if (proyecto.getNombre().equalsIgnoreCase(nombreProyecto)) {
+                ObjectMapper mapper = new ObjectMapper();
+                mapper.registerModule(new JavaTimeModule());
+                mapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+                mapper.writeValue(new File("C:\\Users\\usuario\\IdeaProjects\\Gestion_De_Trabajo_Empresariales\\Gestion_Proyectos\\" + nombreProyecto + ".json"), listaProyectos);
+                System.out.println("Proyecto exportado a JSON: " + nombreProyecto);
+                System.out.println("Exportando proyecto: " + nombreProyecto);
+                return;
+            }
+        }
+        System.out.println("Proyecto no encontrado: " + nombreProyecto);
     }
 
     public static List<Proyecto> getListaProyectos() {
@@ -123,12 +133,12 @@ public class Proyecto {
     @Override
     public String toString() {
         return "Proyecto{" +
-                "nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", lista_personas=" + lista_personas +
-                ", estado_proyecto='" + estado_proyecto + '\'' +
-                ", fecha_inicio='" + fecha_inicio + '\'' +
-                ", fecha_fin='" + fecha_fin + '\'' +
+                "Nombre='" + nombre + '\'' +
+                ", Descripcion='" + descripcion + '\'' +
+                ", Lista personas=" + lista_personas +
+                ", Estado proyecto='" + estado_proyecto + '\'' +
+                ", Fecha inicio='" + fecha_inicio + '\'' +
+                ", Fecha fin='" + fecha_fin + '\'' +
                 '}';
     }
 }
