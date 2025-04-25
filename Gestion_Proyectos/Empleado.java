@@ -23,23 +23,25 @@ public class Empleado extends Trabajadores {
             contador--;
             //MEGATROLL
             System.out.println("Ingrese el nombre del trabajador:");
-            String nombre = sc.next();
+            String nombre = sc.nextLine();
             System.out.println("Ingrese el apellido del trabajador:");
-            String apellido = sc.next();
+            String apellido = sc.nextLine();
             System.out.println("Ingrese el DNI del trabajador:");
-            String dni = sc.next();
+            String dni = sc.nextLine();
             System.out.println("Ingrese la edad del trabajador:");
             int edad = sc.nextInt();
+            sc.nextLine(); // Limpiar el buffer
             System.out.println("Ingrese la direccion del trabajador:");
-            String direccion = sc.next();
+            String direccion = sc.nextLine();
             System.out.println("Ingrese la fecha de ingreso del trabajador (YYYY-MM-DD):");
             LocalDate fechaIngresoStr = LocalDate.parse(sc.next());
             System.out.println("Ingrese el sueldo base del trabajador:");
             int sueldoBase = sc.nextInt();
+            sc.nextLine(); // Limpiar el buffer
             System.out.println("Ingrese el cargo del trabajador:");
-            String cargo = sc.next();
+            String cargo = sc.nextLine();
             System.out.println("Ingrese el puesto de trabajo del trabajador:");
-            String puesto_trabajo = sc.next();
+            String puesto_trabajo = sc.nextLine();
             empleados.add(new Empleado(cargo, puesto_trabajo, nombre, apellido, dni, edad, direccion, fechaIngresoStr, sueldoBase));
         }
         return empleados;

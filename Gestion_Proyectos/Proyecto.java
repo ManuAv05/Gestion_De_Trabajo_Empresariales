@@ -98,7 +98,7 @@ public class Proyecto {
                 mapper.registerModule(new JavaTimeModule());
                 mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-                mapper.writeValue(new File("C:\\Users\\rossi\\IdeaProjects\\Gestion_De_Trabajo_Empresariales\\Gestion_Proyectos\\" + nombreProyecto + ".json"), listaProyectos);
+                mapper.writeValue(new File("C:\\Users\\Manuel\\Desktop\\Gestion_De_Trabajo_Empresariales\\Gestion_Proyectos\\ProyectoExportados\\" + nombreProyecto + ".json"), listaProyectos);
                 System.out.println("Proyecto exportado a JSON: " + nombreProyecto);
                 System.out.println("Exportando proyecto: " + nombreProyecto);
                 return;
