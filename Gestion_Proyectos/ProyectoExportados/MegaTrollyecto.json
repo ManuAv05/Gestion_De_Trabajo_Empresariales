@@ -1,0 +1,28 @@
+[ {
+  "nombre" : "MegaTrollyecto",
+  "descripcion" : "proyecto de prueba",
+  "lista_personas" : [ {
+    "nombre" : "Xenon",
+    "apellido" : "Gamer",
+    "edad" : 21,
+    "fecha_Ingreso" : [ 2004, 7, 21 ],
+    "sueldo_base" : 1200,
+    "cargo" : "Profesional Roblox Player",
+    "puesto_trabajo" : "Moderador",
+    "direccion" : "calle calle",
+    "dni" : "3123123D"
+  }, {
+    "nombre" : "Mega",
+    "apellido" : "Troll",
+    "edad" : 39,
+    "fecha_Ingreso" : [ 2011, 11, 3 ],
+    "sueldo_base" : 1500,
+    "cargo" : "Mamporrero",
+    "puesto_trabajo" : "Aceituna Machaca",
+    "direccion" : "calle calle calle",
+    "dni" : "34234344F"
+  } ],
+  "estado_proyecto" : "Comenzando...",
+  "fecha_inicio" : [ 2025, 5, 19 ],
+  "fecha_fin" : [ 2026, 6, 12 ]
+} ]
