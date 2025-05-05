@@ -113,6 +113,3 @@ El código base ha sido generado en **JAVA**, estructurado en clases siguiendo e
 - Crear un proyecto con personas asignadas y fechas definidas.
 
 ---
-
-## 📂 Estructura del Repositorio
-
