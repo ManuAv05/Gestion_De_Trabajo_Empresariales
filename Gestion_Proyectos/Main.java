@@ -1,22 +1,19 @@
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        menu();
+        Menu();
     }
 
-    public static void menu() throws IOException {
+    public static void Menu() throws IOException {
         // MENU:
         try {
             int opcion;
             boolean siSigue = true;
-            //MEGATROLL
             while (siSigue) {
                 System.out.println("Bienvenido al Gestor de Proyectos");
                 System.out.println("1. Crear Proyecto");

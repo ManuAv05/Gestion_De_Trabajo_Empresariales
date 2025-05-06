@@ -16,12 +16,11 @@ public class Empleado extends Trabajadores {
     }
     public static List<Empleado> listasTrabajadores() {
         List<Empleado> empleados = new ArrayList<>();
-        System.out.println("Cuantos trabajadores desea ingresar?");
+        System.out.println("¿Cuantos trabajadores desea ingresar?");
         int contador = sc.nextInt();
         sc.nextLine();
         while (contador > 0) {
             contador--;
-            //MEGATROLL
             System.out.println("Ingrese el nombre del trabajador:");
             String nombre = sc.nextLine();
             System.out.println("Ingrese el apellido del trabajador:");

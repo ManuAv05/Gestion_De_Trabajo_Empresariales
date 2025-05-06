@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-//MEGATROLL
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
@@ -42,7 +41,6 @@ public class Proyecto {
         String nombre = sc.nextLine();
         System.out.println("Ingrese la descripcion del proyecto:");
         String descripcion = sc.nextLine();
-        //La segunda vez que se ejecuta el programa no pide el numero de trabajadores por lo que hay que limpiar l buffer
         List<Empleado> lista_personas = Empleado.listasTrabajadores();
         System.out.println("Ingrese el estado del proyecto:");
         String estado_proyecto = sc.nextLine();
