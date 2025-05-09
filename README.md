@@ -2,6 +2,12 @@
 
 > Proyecto desarrollado para la asignatura de **Entornos de Desarrollo**  
 > 1º Curso del CFGS en Desarrollo de Aplicaciones Multiplataforma
+> Integrantes:
+>     Manuel Ávila Dugo
+>     Alejandro Sierra Díaz
+>     Manuel Rossi Domínguez
+>     Salvador López Trigueros
+>     José Manuel Sánchez Rosal
 
 ## 🧩 Descripción del Proyecto
 
